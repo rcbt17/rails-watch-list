@@ -1,0 +1,25 @@
+<div class="banner py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1651204978999-00d7ce1b078a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1154&q=80);">
+  <div class="container text-white">
+    <h1>silly<strong>MovieDB</strong></h1>
+    <p>Manage your lists</p>
+  </div>
+</div>
+<% if @lists.count.zero? %>
+  <div class="container text-center my-5 bg-light py-5 shadow">
+    <h1 class="text-muted">Sorry, you have no list yet! </h1>
+    <h2 class="text-secondary">Maybe create one <%= link_to "here", list_add_path %></h2>
+  </div>
+<% else %>
+  <div class="container gap-3 d-flex flex-wrap  justify-content-center my-5 bg-light p-5 shadow">
+    <% @lists.each do |list| %>
+      <div class="card-product" style="width:30vw">
+        <%= image_tag(list.poster_url) %>
+        <div class="card-product-infos">
+          <h2><%= list.name %></h2>
+          <p><%= list.comment %></p>
+          <%= link_to "Open List", list_path(list), class: "btn btn-dark my-2 btn-sm" %>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>

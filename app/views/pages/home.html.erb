@@ -1,0 +1,28 @@
+<div class="banner py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1651204978999-00d7ce1b078a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1154&q=80);">
+  <div class="container text-white">
+    <h1>silly<strong>MovieDB</strong></h1>
+    <p>Create, share and review your current movie and series watchlists!.</p>
+  </div>
+</div>
+
+<div class="container d-flex flex-wrap gap-3 my-5 justify-content-center bg-light py-5 shadow">
+  <div class="card-product">
+  <img src="https://images.unsplash.com/photo-1512070679279-8988d32161be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=738&q=80" />
+  <div class="card-product-infos">
+    <h2>List All Movies</h2>
+    <p>You can view a list of all current available movies.</p>
+    <%= link_to "View Movies", movies_path, class: "btn btn-dark my-2 btn-sm" %>
+  </div>
+</div>
+
+<div class="card-product">
+  <img src="https://plus.unsplash.com/premium_photo-1682125742711-7fa55b842942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1123&q=80" />
+  <div class="card-product-infos">
+    <h2>View My Lists</h2>
+    <p>You can view& manage your current watchlists</p>
+    <%= link_to "View Lists", lists_path, class: "btn btn-dark my-2 btn-sm" %>
+  </div>
+</div>
+
+
+</div>

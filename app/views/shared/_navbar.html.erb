@@ -1,0 +1,27 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://www.pngitem.com/pimgs/m/466-4663233_cinema-icon-cinema-logo-png-transparent-png.png" />
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Movies DB", movies_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "My Lists", lists_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Add List", list_add_path, class: "nav-link" %>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>

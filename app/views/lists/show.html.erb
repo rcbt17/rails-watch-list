@@ -1,0 +1,28 @@
+<div class="banner py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1651204978999-00d7ce1b078a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1154&q=80);">
+  <div class="container text-white">
+    <h1>silly<strong>MovieDB</strong></h1>
+    <p><%= @list.name %></p>
+  </div>
+</div>
+<% if @list.movies.count.zero? %>
+  <div class="container text-center my-5 bg-light py-5 shadow">
+    <h1 class="text-muted">This list has no movies </h1>
+  </div>
+<% else %>
+  <div class="container gap-3 d-flex flex-wrap  justify-content-center my-5 bg-light p-5 shadow">
+    <% @bookmarks.each do |bookmark| %>
+      <div class="card-product movie" style="width:30vw">
+        <%= image_tag(bookmark.movie.poster_url) %>
+        <div class="card-product-infos">
+          <h2><%= bookmark.movie.title %></h2>
+          <p><%= bookmark.movie.overview %></p>
+          <%= link_to "Mark as watched",
+            bookmark_del_path(bookmark),
+            class: "btn btn-warning text-white mt-5 btn-sm",
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
