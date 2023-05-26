@@ -71,3 +71,4 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
 gem "open-uri"
+gem "dotenv-rails", groups: [:development, :test]
