@@ -29,7 +29,7 @@
 </div>
 <% end %>
 <div class="container my-3 bg-light p-5 shadow">
-  <h2 class="text-muted text-center"> Others commented...</h2>
+  <h2 class="text-muted text-center"> <%= pluralize(@listcomments.count, "other") %> commented...</h2>
   <hr>
   <% unless @listcomments.nil? %>
     <% @listcomments.each do |comment| %>
