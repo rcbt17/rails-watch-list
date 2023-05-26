@@ -1,7 +1,7 @@
-<div class="banner py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1651204978999-00d7ce1b078a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1154&q=80);">
+<div class="banner py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @list.poster_img.key %>);">
   <div class="container text-white">
-    <h1>silly<strong>MovieDB</strong></h1>
-    <p><%= @list.name %></p>
+    <h1><%= @list.name %></h1>
+    <p><%= @list.comment %></p>
   </div>
 </div>
 <% if @list.movies.count.zero? %>
@@ -9,7 +9,8 @@
     <h1 class="text-muted">This list has no movies </h1>
   </div>
 <% else %>
-  <div class="container gap-3 d-flex flex-wrap  justify-content-center my-5 bg-light p-5 shadow">
+  <h4 class="text-muted text-center mt-3"> You have bookmarked <%= pluralize(@list.movies.count, 'movie') %>! </h4>
+  <div class="container gap-3 d-flex flex-wrap  justify-content-center my-3 bg-light p-5 shadow">
     <% @bookmarks.each do |bookmark| %>
       <div class="card-product movie" style="width:30vw">
         <%= image_tag(bookmark.movie.poster_url) %>
@@ -25,4 +26,24 @@
       </div>
     <% end %>
   </div>
+</div>
 <% end %>
+<div class="container my-3 bg-light p-5 shadow">
+  <h2 class="text-muted text-center"> Others commented...</h2>
+  <hr>
+  <% unless @listcomments.nil? %>
+    <% @listcomments.each do |comment| %>
+      <div class="card card-body py-2 text-muted my-2 shadow">
+        <strong>Anonymous comment</strong>
+        <hr>
+        <%= comment.content %>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="card card-body py-2 text-muted my-2 shadow">
+    <%= simple_form_for @listcomment do |f| %>
+      <%= f.input :content %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

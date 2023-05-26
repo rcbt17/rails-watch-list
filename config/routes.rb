@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   post 'bookmarks', to: 'bookmarks#create'
   delete 'bookmarks/:id', to: 'bookmarks#destroy', as: :bookmark_del
   delete 'lists/:id', to: 'lists#destroy', as: :delete_list
+  post 'lists/:id', to: 'lists#create_comment', as: :list_comments
 end
