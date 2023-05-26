@@ -9,12 +9,14 @@
     <h1 class="text-muted">Sorry, no movies in the database </h1>
   </div>
 <% else %>
-  <div class="container gap-3 d-flex flex-wrap  justify-content-center my-5 bg-light p-5 shadow">
+  <h2 class="text-muted text-center flex-grow-1 mt-3" id="results_count"></h2>
+  <div class="container gap-3 d-flex flex-wrap  justify-content-center my-5 bg-light p-5 shadow" data-controller="search">
+    <input type="text" class="form-control m-4" placeholder="Type Something" id="search" name="searchbar" data-action="keyup->search#process">
     <% @movies.each do |movie| %>
       <div class="card-product movie" style="width:30vw">
         <%= image_tag(movie.poster_url) %>
         <div class="card-product-infos">
-          <h2><%= movie.title %></h2>
+          <h2 class="name"><%= movie.title %></h2>
           <p><%= movie.overview %></p>
           <div class="dropdown mt-3 float-end">
             <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
