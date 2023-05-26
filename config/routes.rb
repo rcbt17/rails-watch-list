@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'bookmark/:movie_id/:list_id', to: 'bookmarks#new', as: :bookmark_new
   post 'bookmarks', to: 'bookmarks#create'
   delete 'bookmarks/:id', to: 'bookmarks#destroy', as: :bookmark_del
+  delete 'lists/:id', to: 'lists#destroy', as: :delete_list
 end

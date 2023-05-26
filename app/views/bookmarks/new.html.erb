@@ -9,7 +9,7 @@
     <div class="col-md-8 offset-md-2">
     <h3 class="text-muted">Add comment to the movie</h3>
     <hr class="text-secondary">
-      <%= simple_form_for [@bookmark] do |f| %>
+      <%= simple_form_for @bookmark do |f| %>
         <%= f.input :comment %>
         <%= f.input :movie_id, :as => :hidden, :input_html => { :value => params[:movie_id] } %>
         <%= f.input :list_id, :as => :hidden, :input_html => { :value => params[:list_id] } %>
