@@ -13,7 +13,7 @@
   <div class="container gap-3 d-flex flex-wrap  justify-content-center my-5 bg-light p-5 shadow">
     <% @lists.each do |list| %>
       <div class="card-product" style="width:30vw">
-        <%= image_tag(list.poster_url) %>
+        <%= cl_image_tag list.poster_img.key %>
         <div class="card-product-infos">
           <h2><%= list.name %></h2>
           <p><%= list.comment %></p>

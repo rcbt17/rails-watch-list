@@ -11,7 +11,7 @@
     <hr class="text-secondary">
       <%= simple_form_for @list do |f| %>
         <%= f.input :name %>
-        <%= f.input :poster_url %>
+        <%= f.input :poster_img, as: :file %>
         <%= f.input :comment %>
         <%= f.button :submit, class: "btn btn-primary" %>
       <% end %>
