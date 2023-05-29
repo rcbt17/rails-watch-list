@@ -17,6 +17,7 @@
         <%= image_tag(movie.poster_url) %>
         <div class="card-product-infos">
           <h2 class="name"><%= movie.title %></h2>
+          <span data-controller="star-rating"></span>
           <p><%= movie.overview %></p>
           <div class="dropdown mt-3 float-end">
             <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
